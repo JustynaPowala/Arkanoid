@@ -49,7 +49,7 @@ namespace Arkanoid
             
           
 
-            _ball = new Ball(_graphics.PreferredBackBufferWidth / 2, _graphics.PreferredBackBufferHeight / 2, 150f, -200f);
+            _ball = new Ball(_graphics.PreferredBackBufferWidth / 2, _graphics.PreferredBackBufferHeight / 2, 100f, -133f);
             _platform = new Platform(_graphics.PreferredBackBufferWidth / 2, _graphics.PreferredBackBufferHeight, 300f, _graphics.PreferredBackBufferWidth);
 
 
