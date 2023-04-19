@@ -44,9 +44,9 @@ namespace Arkanoid
 
         public bool IsAlive { get; private set; }
 
-        public void HandleCollision(CollisionInfo collisionInfo)                               
-        {
- 
+        public void HandleCollision(CollisionInfo collisionInfo)     //the reflection of the velocity vector of the ball in relation                         
+        {                                                           // to the normal vector of the plane with which the collision occured
+
             float dotProduct = Vector2.Dot(_velocity, collisionInfo.Normal);
             if (dotProduct < 0)                                                 
             {        

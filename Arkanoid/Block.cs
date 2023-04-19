@@ -33,7 +33,7 @@ namespace Arkanoid
         public Vector2 Position => _position;
 
         public RectangleF BoundingBox => new RectangleF(_position.X - _texture.Width / 2, _position.Y - _texture.Height, _texture.Width, _texture.Height);
-        
+                                                        //location of left upper corner and size
 
 
         public bool IsAlive { get; private set; }
