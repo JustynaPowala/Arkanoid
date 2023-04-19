@@ -1,0 +1,9 @@
+
+!*.manifest
+*.suo
+*.user
+
+.vs
+
+bin
+obj
