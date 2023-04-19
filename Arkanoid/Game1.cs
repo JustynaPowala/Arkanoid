@@ -11,8 +11,7 @@ namespace Arkanoid
     public class Game1 : Game
     {
         private Texture2D _platform2Texture;
-    
-
+   
         private Texture2D _ballTexture; 
 
         private Texture2D _blockTexture;
@@ -129,7 +128,7 @@ namespace Arkanoid
 
             if (_ball.RightEdgePosition > _graphics.PreferredBackBufferWidth)
             {
-                _ball.HandleCollision(new CollisionInfo(new Vector2(-1f, 0f)));       // jedynki i zera wskazują kierunek wektora normanego w stosunku do linii ścian
+                _ball.HandleCollision(new CollisionInfo(new Vector2(-1f, 0f)));       
             }
 
             else if (_ball.LeftEdgePosition < 0)
@@ -140,7 +139,7 @@ namespace Arkanoid
 
             if (_ball.BottomEdgePosition > _graphics.PreferredBackBufferHeight)
             {
-                //_ball.HandleCollision(new CollisionInfo(new Vector2(0f, -1f)));
+               
                 if (_isWin == false)
                 {
                     _ball.GameOver();
@@ -187,7 +186,7 @@ namespace Arkanoid
                 {
                     aliveGameObjects.Add(gameObject);
                 }
-                else if (gameObject is Block blockGameObject)    // else if- czyli jeśli gameobject is alive będzie false i do tego sprawdzamy czy jest typu block, ten block od razu nadpisujymy jako blockGameObject i go usuwamy po kolizji 
+                else if (gameObject is Block blockGameObject)  
                 {
                     _blocks.Remove(blockGameObject);
                 }

@@ -33,7 +33,7 @@ namespace Arkanoid
         public Vector2 Position => _position;
 
         public RectangleF BoundingBox => new RectangleF(_position.X - _texture.Width / 2, _position.Y - _texture.Height, _texture.Width, _texture.Height);
-        // prostokąt w którym wskazujemy współrzędne lewego górnego rogu  i wielkość
+        
 
 
         public bool IsAlive { get; private set; }

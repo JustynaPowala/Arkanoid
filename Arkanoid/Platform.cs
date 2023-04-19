@@ -34,7 +34,7 @@ namespace Arkanoid
 
 
         public RectangleF BoundingBox => new RectangleF(_position.X - _texture.Width / 2, _position.Y - _texture.Height, _texture.Width, _texture.Height);
-        // prostokąt w którym wskazujemy współrzędne lewego górnego rogu  i wielkość
+       
 
         public float RightEdgePosition => BoundingBox.Right;
 
@@ -67,12 +67,12 @@ namespace Arkanoid
             {
 
                 _position.X = _boardWidth - _texture.Width / 2;
-                //RightEdgePosition = boardX;
+                
             }
             else if (LeftEdgePosition < 0)
             {
                 _position.X = 0 + _texture.Width / 2;
-                //LeftEdgePosition = 0;
+                
             }
         }
 

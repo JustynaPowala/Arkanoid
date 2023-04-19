@@ -32,7 +32,7 @@ namespace Arkanoid
         public Vector2 Position => _position;
         public Vector2 Velocity => _velocity;
 
-        public float Radius => _texture.Width / 4;       // równa się też _texture.Height/2
+        public float Radius => _texture.Width / 4;      
 
         public float RightEdgePosition => _position.X + Radius;
         public float LeftEdgePosition => _position.X - Radius;
@@ -44,16 +44,15 @@ namespace Arkanoid
 
         public bool IsAlive { get; private set; }
 
-        public void HandleCollision(CollisionInfo collisionInfo)                                // odbcie wektora predkosci pilki w stosunku do wektora normalnego plaszczyzny, z ktora nastąpila kolizja
+        public void HandleCollision(CollisionInfo collisionInfo)                               
         {
  
             float dotProduct = Vector2.Dot(_velocity, collisionInfo.Normal);
-            if (dotProduct < 0)                                                 // kiedy piłka uderzała między 2 klocki (2 kolzije jednocześnie) to zamiast odbić się w górę, przechodziła przez te klocki w dół. Jeśli nacieramy na płaszcyzne to iloczyn skalarny będzie ujemny, w takim przypadku dwóch kolizji piłka odbijała się w górę(chociaż nie było tego nawet widać) i od razu zmieiała kierunek w dół, wynik dot product byl wtedy dodatni.  Dlatego zmieniać velocity będziemy tylko wtedy kiedy iloczyn skalarny(dot product) będzie ujemny.
+            if (dotProduct < 0)                                                 
             {        
              _velocity = _velocity - 2 *  dotProduct * collisionInfo.Normal;
-            }
-            // Update(new GameTime(TimeSpan.Zero, TimeSpan.FromSeconds(1f / 30f)));            //Zapobieganie zatrzymaniu się piłki (w ścianie) przy wytracaniu energii. 
-            //_velocity *= .9f;                                                               //Wytracanie Energii
+            } 
+                                                                      
         }
 
         public void GameOver()

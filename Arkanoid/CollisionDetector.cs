@@ -55,11 +55,13 @@ namespace Arkanoid
           
 
            
-            var d = fromClosestPoinfOnRectangleToCircleCenter.LengthSquared();  
-            
+            var d = fromClosestPoinfOnRectangleToCircleCenter.LengthSquared();
+            //  The length function was not used because rooting is inefficient.
+            //  The LenghtSquared function will return length squared,
+            //  so below we compare this result to radois* radius, not radius.
 
 
-            if ( d <= radius*radius && d > float.Epsilon)   
+            if ( d <= radius*radius && d > float.Epsilon)    //when normalizing vector to 1 we divide by the lenght of the vector- so it must be greater than 0
                                                           
             {
                 fromClosestPoinfOnRectangleToCircleCenter.Normalize();   
